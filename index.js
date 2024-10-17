@@ -16,9 +16,7 @@ const corsOptions = {
 const app = express();
 app.use(cors(corsOptions));
 app.use(express.json());
-
-app.get("/test", (req, res) => res.send("Express on Vercel"));
-
+app.options('*', cors(corsOptions))
 
 // Connect to DB
 mongoose.connect(process.env.MONGODB_URL)
