@@ -27,6 +27,7 @@ mongoose.connect(process.env.MONGODB_URL)
 
 // Auth Routes
 app.use('/api/auth', authRoutes);
+
 // CRUD Routes
 app.use('/', todoRoutes);
 
