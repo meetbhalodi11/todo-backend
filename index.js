@@ -9,7 +9,8 @@ dotenv.config();
 
 const corsOptions = {
     origin: 'https://todo-app-meetbhalodi.netlify.app',
-    methods: 'POST',
+    methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true,
 };
 
