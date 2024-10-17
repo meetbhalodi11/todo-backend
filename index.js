@@ -8,10 +8,11 @@ const todoRoutes = require('./Routes/todo');
 dotenv.config();
 
 const corsOptions = {
-    origin: 'https://todo-app-meetbhalodi.netlify.app',
-    methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
+    origin: '*',
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    preflightContinue: false,
     credentials: true,
+    optionsSuccessStatus: 204
 };
 
 const app = express();
