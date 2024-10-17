@@ -25,6 +25,7 @@ JWT_SECRET=<Secret for signing>
 1. API error handling and overing all the scenarios
 
 ### Demo
+https://todo-frontend-meetbhalodi.vercel.app
 
 ### Frontend repo url
 https://github.com/meetbhalodi11/todo-frontend
