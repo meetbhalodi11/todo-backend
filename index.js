@@ -9,7 +9,7 @@ dotenv.config();
 
 const corsOptions = {
     origin: '*',
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
     preflightContinue: false,
     credentials: true,
     optionsSuccessStatus: 204
