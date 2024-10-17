@@ -8,15 +8,17 @@ const todoRoutes = require('./Routes/todo');
 dotenv.config();
 
 const corsOptions = {
-  origin: 'https://todo-app-meetbhalodi.netlify.app',
-  methods: 'GET, HEAD, PUT, PATCH, POST, DELETE',
-  credentials: true,
-  optionsSuccessStatus: 204
+    origin: 'https://todo-app-meetbhalodi.netlify.app',
+    methods: 'GET, HEAD, PUT, PATCH, POST, DELETE',
+    credentials: true,
 };
 
 const app = express();
 app.use(cors(corsOptions));
 app.use(express.json());
+
+app.get("/test", (req, res) => res.send("Express on Vercel"));
+
 
 // Connect to DB
 mongoose.connect(process.env.MONGODB_URL)
