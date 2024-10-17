@@ -7,8 +7,15 @@ const todoRoutes = require('./Routes/todo');
 
 dotenv.config();
 
+const corsOptions = {
+  origin: 'https://todo-app-meetbhalodi.netlify.app',
+  methods: 'GET, HEAD, PUT, PATCH, POST, DELETE',
+  credentials: true,
+  optionsSuccessStatus: 204
+};
+
 const app = express();
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // Connect to DB
