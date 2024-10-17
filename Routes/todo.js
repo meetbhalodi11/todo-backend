@@ -3,7 +3,7 @@ const TodoModel = require('../Models/Todo');
 const authenticateToken = require('../Middleware/auth');
 const router = express.Router();
 
-router.get('/api/get-tasks', authenticateToken, async (req, res) => {
+router.get('/get-tasks', authenticateToken, async (req, res) => {
     try {
         const todos = await TodoModel.find({ user: req.user.id });
         res.json(todos);
@@ -13,7 +13,7 @@ router.get('/api/get-tasks', authenticateToken, async (req, res) => {
 });
 
 
-router.post('/api/add-task', authenticateToken, async (req, res) => {
+router.post('/add-task', authenticateToken, async (req, res) => {
     try {
         const { task } = req.body;
         const newTodo = new TodoModel({
@@ -27,7 +27,7 @@ router.post('/api/add-task', authenticateToken, async (req, res) => {
     }
 });
 
-router.put('/api/update-task-status/:id', authenticateToken, async (req, res) => {
+router.put('/update-task-status/:id', authenticateToken, async (req, res) => {
     try {
         console.log("id", req.params.id)
         console.log("user", req.user.id)
@@ -45,7 +45,7 @@ router.put('/api/update-task-status/:id', authenticateToken, async (req, res) =>
     }
 });
 
-router.put('/api/update-task/:id', authenticateToken, async (req, res) => {
+router.put('/update-task/:id', authenticateToken, async (req, res) => {
     const { id } = req.params;
     const { task } = req.body;
 
@@ -60,7 +60,7 @@ router.put('/api/update-task/:id', authenticateToken, async (req, res) => {
     }
 });
 
-router.delete('/api/delete-task/:id', authenticateToken, async (req, res) => {
+router.delete('/delete-task/:id', authenticateToken, async (req, res) => {
     try {
         const todo = await TodoModel.findOneAndDelete({ _id: req.params.id, user: req.user.id });
 

@@ -27,7 +27,7 @@ mongoose.connect(process.env.MONGODB_URL)
 app.use('/api/auth', authRoutes);
 
 // CRUD Routes
-app.use('/', todoRoutes);
+app.use('/api', todoRoutes);
 
 app.listen(process.env.SERVER_PORT || 5000, () => {
     console.log(`Server running at ${process.env.SERVER_PORT}`)
