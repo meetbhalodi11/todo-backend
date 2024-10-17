@@ -6,6 +6,7 @@ const authRoutes = require('./Routes/auth');
 const todoRoutes = require('./Routes/todo');
 
 dotenv.config();
+const app = express();
 
 const corsOptions = {
     origin: '*',
@@ -15,7 +16,6 @@ const corsOptions = {
     optionsSuccessStatus: 204
 };
 
-const app = express();
 app.use(cors(corsOptions));
 app.use(express.json());
 
