@@ -27,3 +27,4 @@ JWT_SECRET=<Secret for signing>
 ### Demo
 
 ### Frontend repo url
+https://github.com/meetbhalodi11/todo-frontend
